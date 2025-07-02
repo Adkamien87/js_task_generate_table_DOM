@@ -356,7 +356,13 @@ const people = [
   },
 ];
 
-const table = document.querySelectorAll('table');
+const table = document.querySelectorAll('.dashboard');
+const tbody = document.createElement('tbody');
+const thead = document.querySelector('tr');
+
+tbody.appendChild(thead);
+
+table[0].appendChild(tbody);
 
 for (let i = 0; i < people.length; i++) {
   let newTr = null;
@@ -399,5 +405,5 @@ for (let i = 0; i < people.length; i++) {
   tdCentury.textContent = Math.ceil(people[i].died / 100);
   newTr.appendChild(tdCentury);
 
-  table[0].appendChild(newTr);
+  tbody.appendChild(newTr);
 }
